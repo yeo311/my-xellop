@@ -1,4 +1,4 @@
-import getSessionId from '@/module/getSessionId'
+import getSessionId from '@/module/xellop-apis/getSessionId'
 
 async function getReservation() {
   try {

@@ -6,6 +6,7 @@ export default async function getSessionId() {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: `userInputUserID=${process.env.USER_ID}&userInputUserPWD=${process.env.USER_PWD}&userCheckAutoLogin=false`,
+      next: { revalidate: 0 },
     })
 
     const cookies = res.headers.getSetCookie()
@@ -13,9 +14,11 @@ export default async function getSessionId() {
       .find((cookie) => cookie.startsWith('PHPSESSID'))
       ?.split(';')[0]
       .split('=')[1]
+
     if (!phpSessionId) {
-      throw new Error('PHPSESSID not found')
+      throw new Error('Failed to get PHPSESSID')
     }
+
     return phpSessionId
   } catch (e) {
     throw e
