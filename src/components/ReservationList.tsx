@@ -1,8 +1,16 @@
-import getReservations from '@/module/xellop-apis/getReservations'
-import DeleteButton from './DeleteButton'
+'use client'
 
-export default async function ReservationList() {
-  const reservations = await getReservations()
+import DeleteButton from './DeleteButton'
+import { ReservationParams } from '@/module/xellop-apis/addReservation'
+import { Group, Text } from '@mantine/core'
+
+export default function ReservationList({ reservations }: { reservations: ReservationParams[] }) {
+  if (!reservations.length)
+    return (
+      <Group justify="center" p="md">
+        <Text>등록된 차량이 없습니다.</Text>
+      </Group>
+    )
 
   return (
     <ul>
