@@ -10,8 +10,9 @@ export default function HistoryFilter() {
   const month = searchParams.get('month') ?? (new Date().getMonth() + 1).toString()
 
   return (
-    <Group>
+    <Group className="mb-2">
       <Select
+        className="flex-1"
         data={[
           { label: '2024년', value: '2024' },
           { label: '2023년', value: '2023' },
@@ -22,6 +23,7 @@ export default function HistoryFilter() {
         }}
       />
       <Select
+        className="flex-1"
         data={[
           { label: '1월', value: '1' },
           { label: '2월', value: '2' },

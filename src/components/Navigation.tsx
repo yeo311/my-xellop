@@ -4,7 +4,7 @@ import IcCar from '@/icons/IcCar'
 import IcList from '@/icons/IcList'
 import IcHistory from '@/icons/IcHistory'
 
-export default function Navagation() {
+export default function Navigation() {
   const navItems: NavButtonProps[] = [
     {
       link: '/',
@@ -22,8 +22,9 @@ export default function Navagation() {
       text: '사용이력',
     },
   ]
+
   return (
-    <Group h="100%" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+    <Group className="pt-2" style={{ paddingBottom: 'calc(env(safe-area-inset-bottom) + 8px)' }}>
       {navItems.map((item) => (
         <NavButton key={item.link} {...item} />
       ))}
