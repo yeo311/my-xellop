@@ -1,22 +1,23 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Providers from '@/components/Providers'
-import { ColorSchemeScript } from '@mantine/core'
-import AppShellContainer from '@/components/AppShellContainer'
-import { Metadata } from 'next'
+import { ColorSchemeScript, Title } from '@mantine/core'
+import { Metadata, Viewport } from 'next'
+import Navigation from '@/components/Navigation'
 
 const inter = Inter({ subsets: ['latin'] })
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+}
 
 export const metadata: Metadata = {
   title: {
     template: '차량 방문등록 | %s',
     default: '차량 방문등록',
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
   },
   appleWebApp: {
     capable: true,
@@ -165,7 +166,15 @@ export default function RootLayout({
       </head>
       <body className={inter.className} style={{ backgroundColor: '#fcfcfc' }}>
         <Providers>
-          <AppShellContainer>{children}</AppShellContainer>
+          <>
+            <header className="fixed top-0 left-0 right-0 h-14 flex justify-center items-center shadow-md z-10 bg-white">
+              <Title order={4}>차량 방문등록</Title>
+            </header>
+            <main className="pt-20 px-4">{children}</main>
+            <footer className="fixed bottom-0 left-0 right-0 border-t border-gray-300">
+              <Navigation />
+            </footer>
+          </>
         </Providers>
       </body>
     </html>

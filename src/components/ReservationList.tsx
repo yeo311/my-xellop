@@ -2,13 +2,15 @@
 
 import DeleteButton from './DeleteButton'
 import { ReservationParams } from '@/module/xellop-apis/addReservation'
-import { Group, Paper, Stack, Text, Title } from '@mantine/core'
+import { Button, Group, Paper, Stack, Text, Title } from '@mantine/core'
+import RefreshButton from './RefreshButton'
 
 export default function ReservationList({ reservations }: { reservations: ReservationParams[] }) {
   if (!reservations.length)
     return (
       <Group justify="center" p="md">
         <Text>등록된 차량이 없습니다.</Text>
+        <RefreshButton />
       </Group>
     )
 
@@ -25,6 +27,7 @@ export default function ReservationList({ reservations }: { reservations: Reserv
           </Group>
         </Paper>
       ))}
+      <RefreshButton />
     </Stack>
   )
 }

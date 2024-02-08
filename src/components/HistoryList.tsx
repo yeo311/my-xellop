@@ -16,17 +16,19 @@ export default async function HistoryList({ histories }: HistoryListProps) {
   return (
     <Stack>
       {histories.map((history) => (
-        <Paper key={`${history.carNumber}-${history.inDate}`} shadow="sm" p="xl">
+        <Paper key={`${history.carNumber}-${history.inDate}`} shadow="sm" p="md">
           <Group justify="space-between">
-            <Stack>
+            <Stack className="flex-1">
               <Title order={3}>{history.carNumber}</Title>
-              <Text size="sm">
+              <Text size="xs">
                 {history.inDate}
                 <br />
                 {history.outDate}
               </Text>
             </Stack>
-            <Text>{history.duration}</Text>
+            <Text className="basis-20" size="sm">
+              {history.duration}
+            </Text>
           </Group>
         </Paper>
       ))}
