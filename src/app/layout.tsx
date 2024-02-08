@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body className={inter.className}>
+      <body className={inter.className} style={{ backgroundColor: '#fcfcfc' }}>
         <Providers>
           <AppShell header={{ height: 60 }} footer={{ height: 60 }} padding="md">
             <AppShell.Header>
