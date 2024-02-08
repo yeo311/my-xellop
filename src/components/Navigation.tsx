@@ -23,7 +23,7 @@ export default function Navagation() {
     },
   ]
   return (
-    <Group h="100%">
+    <Group h="100%" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
       {navItems.map((item) => (
         <NavButton key={item.link} {...item} />
       ))}
