@@ -5,7 +5,7 @@ import { Metadata } from 'next'
 import { Suspense } from 'react'
 
 export const metadata: Metadata = {
-  title: '사용 이력',
+  title: '사용이력',
 }
 
 export default async function HistoryPage({
