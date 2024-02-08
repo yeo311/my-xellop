@@ -2,7 +2,7 @@
 
 import DeleteButton from './DeleteButton'
 import { ReservationParams } from '@/module/xellop-apis/addReservation'
-import { Group, Text } from '@mantine/core'
+import { Group, Paper, Stack, Text, Title } from '@mantine/core'
 
 export default function ReservationList({ reservations }: { reservations: ReservationParams[] }) {
   if (!reservations.length)
@@ -13,13 +13,18 @@ export default function ReservationList({ reservations }: { reservations: Reserv
     )
 
   return (
-    <ul>
+    <Stack>
       {reservations.map((reservation) => (
-        <li key={reservation.carNumber}>
-          {reservation.carNumber} , {reservation.date}, {reservation.dateDuration}
-          <DeleteButton params={reservation} />
-        </li>
+        <Paper key={reservation.carNumber} shadow="sm" p="xl">
+          <Group justify="space-between">
+            <Stack>
+              <Title order={3}>{reservation.carNumber}</Title>
+              <Text>{`${reservation.date} / ${reservation.dateDuration}일`}</Text>
+            </Stack>
+            <DeleteButton params={reservation} />
+          </Group>
+        </Paper>
       ))}
-    </ul>
+    </Stack>
   )
 }

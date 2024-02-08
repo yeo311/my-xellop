@@ -2,7 +2,7 @@
 
 import { ReservationParams } from '@/module/xellop-apis/addReservation'
 import deleteReservation from '@/module/xellop-apis/deleteReservation'
-import { revalidateTag } from 'next/cache'
+import { Button } from '@mantine/core'
 
 type Props = {
   params: ReservationParams
@@ -10,7 +10,9 @@ type Props = {
 
 export default function DeleteButton({ params }: Props) {
   return (
-    <button
+    <Button
+      variant="gradient"
+      gradient={{ from: 'red', to: 'grape', deg: 90 }}
       onClick={async () => {
         if (!window.confirm('정말 삭제하시겠습니까?')) return
         const res = await deleteReservation(params)
@@ -25,7 +27,7 @@ export default function DeleteButton({ params }: Props) {
         }
       }}
     >
-      삭제
-    </button>
+      취소
+    </Button>
   )
 }
