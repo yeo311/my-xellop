@@ -2,8 +2,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Providers from '@/components/Providers'
 import { ColorSchemeScript } from '@mantine/core'
-import '@mantine/core/styles.css'
-import '@mantine/dates/styles.css'
 import AppShellContainer from '@/components/AppShellContainer'
 import { Metadata } from 'next'
 
