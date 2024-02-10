@@ -24,7 +24,7 @@ export default function Navigation() {
   ]
 
   return (
-    <Group className="pt-2 safearea">
+    <Group className="pt-2" style={{ paddingBottom: 'calc(env(safe-area-inset-bottom) + 8px)' }}>
       {navItems.map((item) => (
         <NavButton key={item.link} {...item} />
       ))}
