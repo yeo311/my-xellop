@@ -1,5 +1,4 @@
 import fetchXellopApi from './fetchXellopApi'
-import getSessionId from './getSessionId'
 
 export type ReservationParams = {
   carNumber: string

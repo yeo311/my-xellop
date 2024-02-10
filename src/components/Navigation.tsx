@@ -3,6 +3,7 @@ import NavButton, { NavButtonProps } from './NavButton'
 import IcCar from '@/icons/IcCar'
 import IcList from '@/icons/IcList'
 import IcHistory from '@/icons/IcHistory'
+import IcPark from '@/icons/IcPark'
 
 export default function Navigation() {
   const navItems: NavButtonProps[] = [
@@ -20,6 +21,11 @@ export default function Navigation() {
       link: '/history',
       icon: <IcHistory />,
       text: '사용이력',
+    },
+    {
+      link: '/parkinglot',
+      icon: <IcPark />,
+      text: '주차위치',
     },
   ]
 

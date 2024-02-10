@@ -2,7 +2,6 @@
 
 import { revalidateTag } from 'next/cache'
 import { ReservationParams } from './addReservation'
-import getSessionId from './getSessionId'
 import * as cheerio from 'cheerio'
 import fetchXellopApi from './fetchXellopApi'
 
