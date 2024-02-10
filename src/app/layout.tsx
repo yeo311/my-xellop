@@ -4,6 +4,7 @@ import Providers from '@/components/Providers'
 import { ColorSchemeScript, Title } from '@mantine/core'
 import { Metadata, Viewport } from 'next'
 import Navigation from '@/components/Navigation'
+import TitleText from '@/components/TitleText'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -169,7 +170,7 @@ export default function RootLayout({
         <Providers>
           <>
             <header className="fixed top-0 left-0 right-0 h-14 flex justify-center items-center shadow-md z-10 bg-white">
-              <Title order={4}>차량 방문등록</Title>
+              <TitleText />
             </header>
             <main className="pt-20 px-4">{children}</main>
             <footer className="fixed bottom-0 left-0 right-0 border-t border-gray-300">
