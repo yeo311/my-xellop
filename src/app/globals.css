@@ -6,3 +6,9 @@
 
 @import '@mantine/core/styles.css';
 @import '@mantine/dates/styles.css';
+
+.safearea {
+  padding-bottom: 8px;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 8px);
+  padding-bottom: calc(constant(safe-area-inset-bottom) + 8px);
+}
