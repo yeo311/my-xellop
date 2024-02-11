@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   },
   icons: [
     {
+      rel: 'apple-touch-startup-image',
+      url: 'ios/ios-splash.png',
+    },
+    {
       url: 'android/android-launchericon-512-512.png',
       sizes: '512x512',
     },
