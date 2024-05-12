@@ -9,6 +9,11 @@ export default function Navigation() {
   const navItems: NavButtonProps[] = [
     {
       link: '/',
+      icon: <IcPark />,
+      text: '주차위치',
+    },
+    {
+      link: '/reservation',
       icon: <IcCar />,
       text: '방문등록',
     },
@@ -21,11 +26,6 @@ export default function Navigation() {
       link: '/history',
       icon: <IcHistory />,
       text: '사용이력',
-    },
-    {
-      link: '/parkinglot',
-      icon: <IcPark />,
-      text: '주차위치',
     },
   ]
 

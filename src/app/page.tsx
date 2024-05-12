@@ -1,14 +1,18 @@
-import Reservation from '@/components/Reservation'
+import AddParking from '@/components/AddParking'
+import ParkingList from '@/components/ParkingList'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '등록',
+  title: '주차 위치',
 }
 
-export default async function Home() {
+export const dynamic = 'force-dynamic'
+
+export default async function ListPage() {
   return (
     <>
-      <Reservation />
+      <ParkingList />
+      <AddParking />
     </>
   )
 }
