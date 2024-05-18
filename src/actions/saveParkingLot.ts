@@ -14,7 +14,7 @@ export default async function saveParkingLot(prevState: { message: string }, for
     day: dayjs().format('YYYY-MM-DD'),
   }
   await addParkingLot(rawFormData)
-  revalidatePath('/parkinglot')
+  revalidatePath('/')
 
   return {
     message: '주차 위치 저장 성공',
