@@ -1,9 +1,9 @@
-import getParkingLots from '@/module/postgres/getParkingLots'
+import { getParkingLot } from '@/module/supabase'
 import { Group, Stack, Text, Title } from '@mantine/core'
 import dayjs from 'dayjs'
 
 export default async function ParkingList() {
-  const list = await getParkingLots()
+  const list = await getParkingLot()
 
   if (!list.length)
     return (
@@ -21,12 +21,12 @@ export default async function ParkingList() {
           <Title order={3}>지금 우리 차는</Title>
           <Title order={3}>
             <span className="underline underline-offset-6 uppercase text-cyan-500 decoration-pink-500 decoration-double">
-              {current.title}
+              {current.location} {current.ground} {current.floor}층 {current.num}
             </span>{' '}
             에 주차되어 있어요
           </Title>
           <Text c="dimmed" size="sm">
-            {dayjs(current.day).format('M월 D일')}에 저장되었어요
+            {dayjs(current.created_at).format('M월 D일')}에 저장되었어요
           </Text>
         </Stack>
       </div>

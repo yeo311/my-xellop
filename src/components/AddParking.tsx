@@ -24,6 +24,7 @@ export default function AddParking() {
       <Drawer opened={opened} onClose={close} title="주차 위치 저장" position="bottom">
         <form action={formAction}>
           <Stack>
+            <TextInput name="location" label="주차 위치" defaultValue="우리집" />
             <Select
               label="지상/지하"
               name="ground"

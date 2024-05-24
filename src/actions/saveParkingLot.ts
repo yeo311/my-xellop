@@ -1,19 +1,20 @@
 'use server'
 
-import addParkingLot, { AddParkingLotParams } from '@/module/postgres/addParkingLot'
-import dayjs from 'dayjs'
+import { createParkingLot } from '@/module/supabase'
 import { revalidatePath } from 'next/cache'
 
 export default async function saveParkingLot(prevState: { message: string }, formData: FormData) {
   const ground = formData.get('ground')?.toString()
   const floor = formData.get('floor')?.toString()
   const num = formData.get('num')?.toString()
+  const location = formData.get('location')?.toString()
 
-  const rawFormData: AddParkingLotParams = {
-    title: `${ground} ${floor}층 ${num}번`,
-    day: dayjs().format('YYYY-MM-DD'),
-  }
-  await addParkingLot(rawFormData)
+  await createParkingLot({
+    location,
+    ground,
+    floor: Number(floor),
+    num,
+  })
   revalidatePath('/')
 
   return {
